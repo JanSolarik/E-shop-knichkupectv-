@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        button {
+            top: 20px;
+            right: 20px;
+            background-color: red;
+            color: black;
+            text-align: centre;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25px;
+            margin: 2px 1px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            position: fixed;
+        }
+
+    </style>
+</head>
+<body>
+    <button type="button" onclick="confirmDialog('Do you want to create an account?')">Create account</button>
+    <script>
+        function confirmDialog() {
+            var result = confirm("Chcete pokračovat?");
+            if (result) {
+                // Uživatel klikl na "OK"
+                alert("Vybrali jste 'Ano'.");
+            } else {
+                // Uživatel klikl na "Storno"
+                alert("Vybrali jste 'Ne'.");
+            }
+        }
+    </script>
+
+</body>
+</html>
