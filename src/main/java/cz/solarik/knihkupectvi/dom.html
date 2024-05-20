@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .h11container{
+            border: 2px solid black;
+            padding-left: 80px;
+            padding-right: 80px;
+            background-color: white;
+            margin: 0 ;
+            position: fixed;
+            width: fit-content;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+        }
+        button{
+
+            padding: 20px 40px;
+            background-color: grey;
+        }
+        button:hover{
+            background-color: green;
+        }
+        .button-container {
+            position: fixed;
+            right: 800px;
+            left: 380px;
+            top: 430px;
+            bottom: 400px;
+            padding: 2px 3px;
+        }
+
+        .button-container button {
+            font-size: 20px;
+            margin: 5px;
+        }
+        .BookSearch{
+            top:20px;
+            bottom:20px;
+            padding:20px;
+            position: fixed;
+            left: 1000px;
+            right: 50px;
+            border: 3px solid black;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .BookSearch input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .BookSearch h1 {
+            margin: 10px;
+        }
+        .user {
+            background-image: url("https://www.myshirt.cz/i/d/2/7/c-11500-0-1-7e72c27d7e427971b365cf5ec4769d27.jpg");
+            background-size: center;
+            padding: 10px;
+            position: fixed;
+            top: 10px;
+            left: 380px;
+            right: 800px;
+            bottom: 500px;
+            border: 3px solid black;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="user">
+        <h1>Your profile</h1>
+        <h2>username</h2>
+        <h3>favorite theme</h3>
+    </div>
+    <div class="button-container">
+        <button>Create a book</button>
+    </div>
+    <div class="h11container">
+        <h1>Your books</h1>
+    </div>
+    <div class="BookSearch">
+        <h1>Enter the book name</h1>
+        <input type="text">
+    </div>
+</body>
+</html>

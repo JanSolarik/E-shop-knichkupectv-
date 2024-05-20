@@ -15,10 +15,22 @@
         }
 
         form {
-            background-color: #f2f2f2;
-            padding: 20px;
+            background-color: grey;
+            padding: 80px;
+            padding-top: 190px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            top: 260px;
+            left:600px;
+            position: fixed;
+            font-size: 4em;
+        }
+        h2 {
+            top: 380px;
+            left: 1130px;
+            position: absolute;
         }
 
         input[type="text"],
@@ -44,21 +56,30 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: blue;
         }
     </style>
 
 </head>
 <body>
-    <form action="http://localhost:63342/knihkupectvi/cz/solarik/knihkupectvi/registrace.html?_ijt=hd2930bo8e7fs1llabi2vdj39h&_ij_reload=RELOAD_ON_SAVE" method="post">
-        <label for="username">Uživatelské jméno:</label>
-        <input type="text" id="username" name="username" required>
+    <h1>Sing in</h1>
 
-        <label for="password">Heslo:</label>
-        <input type="password" id="password" name="password" required>
+        <form action="http://localhost:63342/knihkupectvi/cz/solarik/knihkupectvi/dom.html?_ijt=hd2930bo8e7fs1llabi2vdj39h&_ij_reload=RELOAD_ON_SAVE" method="post">
+            <label for="username">User name:</label>
+            <input type="text" id="username" name="username" required>
 
-        <input type="submit" value="Přihlásit se">
-    </form>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Sing in">
+        </form>
+
+
+        <form action="http://localhost:63342/knihkupectvi/cz/solarik/knihkupectvi/registrace.html?_ijt=uim4disc75rc5go5t26mbugd9q&_ij_reload=RELOAD_ON_SAVE" method="post">
+            <h2>Not registered jet?</h2>
+            <input type="submit" value="Register">
+        </form>
+
 
 </body>
 </html>
