@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 @Entity
-public class User {
+public class Uzivatele {
     @Id
     private Long id;
 }
