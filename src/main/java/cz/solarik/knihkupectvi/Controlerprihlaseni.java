@@ -6,20 +6,33 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class Controlerprihlaseni {
+
     @GetMapping("/prihlaseni")
-    public String prihlaseni() {
-        for (int i = 0; i < 10; ++i) {
-            System.out.println("Hello World");
-        }
+    public String prihlaseni1() {
         return "prihlaseni";
     }
-    @PostMapping("/register")
-    public String postregistrace() {
-        System.out.println("registrace uspesna");
-        return "prihlaseni";
-    }
-    @GetMapping("/register")
-    public String getregister() {
+    @GetMapping("/registrace")
+    public String registrace1() {
         return "registrace";
+    }
+    @GetMapping("/domecek")
+    public String domecek1() {
+        return "domecek";
+    }
+    @GetMapping("/book")
+    public String book1() {
+        return "book";
+    }
+    @PostMapping("/prihlaseni")
+    public String registrace2() {
+        return "prihlaseni";
+    }
+    @PostMapping("/domecek")
+    public String prihlaseni2() {
+        return "domecek";
+    }
+    @PostMapping("/book")
+    public String book2() {
+        return "book";
     }
 }

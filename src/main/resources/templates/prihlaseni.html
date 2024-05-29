@@ -23,14 +23,19 @@
         }
         h1 {
             top: 260px;
-            left:600px;
+            left:730px;
             position: fixed;
             font-size: 4em;
         }
         h2 {
-            top: 380px;
-            left: 1130px;
-            position: absolute;
+            font-size: 2em;
+            color: black;
+            top: 610px;
+            left: 1050px;
+            position: fixed;
+            border: 3px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
         }
 
         input[type="text"],
@@ -64,20 +69,19 @@
 <body>
     <h1>Sing in</h1>
 
-        <form action="http://localhost:8080/home" method="post">
-            <label for="username">Nickname:</label>
-            <input type="text" id="username" name="username" required>
+    <form action="http://localhost:8080/domecek" method="post">
+        <label for="username">Nickname:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" value="Sing in">
-        </form>
+        <input type="submit" value="Sing in">
+    </form>
 
 
-        <a href="http://localhost:8080/register">
-            <h2>ahwdfawhdf</h2>
-        </a>
+    <a href="http://localhost:8080/registrace">
+        <h2>Register</h2>
+    </a>
 
 
 </body>

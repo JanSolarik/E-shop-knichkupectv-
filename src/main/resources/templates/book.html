@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+</head>
+<style>
+    form {
+       padding: 20px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+       position: fixed;
+       background-color: grey;
+       left: 300px;
+       top: 150px;
+       right: 300px;
+       bottom: 100px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 20px;
+        margin: 20px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #4CAF50;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"]:hover {
+            background-color: blue;
+    }
+    label {
+        padding-top: 25px;
+    }
+    h1 {
+    position:center;
+    left:650px;
+    }
+</style>
+<body>
+<form action="http://localhost:8080/domecek">
+  <h1>Create a book</h1>
+  <label for="bookname">Name:</label>
+  <input type="text" id="bookname" name="bookname">
+  <label for="author">Author:</label>
+  <input type="text" id="author" name="author">
+  <input type="submit" value="Create">
+</form>
+
+</body>
+</html>
