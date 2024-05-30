@@ -13,7 +13,7 @@ public class Uzivatel {
     private Long id;
 
     @Column
-    private String nickname;
+    private String username;
 
     @Column
     private String password;
