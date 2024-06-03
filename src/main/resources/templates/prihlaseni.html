@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Sing in</title>
@@ -69,7 +69,7 @@
 <body>
     <h1>Sing in</h1>
 
-    <form action="http://localhost:8080/domecek" method="post">
+    <form th:action="@{/prihlaseni}" method="post">
         <label for="username">Nickname:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password:</label>
