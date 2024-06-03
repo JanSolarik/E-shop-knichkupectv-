@@ -42,7 +42,7 @@ public class TestUsersCreator implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        final var users = Stream.of("jan");
+        final var users = Stream.of("Jan Solarik");
         final var ddlAction = DDL_ACTIONS.get(ddlAuto);
         if (ddlAction != null) {
             users.forEach(ddlAction);
@@ -61,7 +61,7 @@ public class TestUsersCreator implements CommandLineRunner {
     }
 
     protected void createUser(String username) {
-        userDetailsManager.createUser(createUserDetails(username, "heslo"));
+        userDetailsManager.createUser(createUserDetails(username, "Heslo"));
         uzivatelRepository.save(new Uzivatel(username));
         LOGGER.info("CREATE {}", username);
     }

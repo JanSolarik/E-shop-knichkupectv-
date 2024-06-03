@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:ht="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -28,10 +28,10 @@
         }
         form {
             position: fixed;
-            right: 800px;
-            left: 380px;
-            top: 440px;
-            bottom: 400px;
+            right: 1100px;
+            left: 400px;
+            top: 200px;
+            bottom: 600px;
             padding: 2px 3px;
         }
 
@@ -84,13 +84,15 @@
 </head>
 <body>
     <div class="user">
-        <h1>Username</h1>
-        <h2>Email</h2>
-        <h3></h3>
+        <h1>Jan Solarik</h1>
+        <form ht:action="@{/domecek}" method="post">
+            <label for="name">Enter name:</label>
+            <input type="text" id="name" name="name">
+            <label for="author">Enter your name:</label>
+            <input type="text" id="author" name="authorName">
+            <button type="submit">Create a book</button>
+        </form>
     </div>
-    <form action="http://localhost:8080/book" methot="post">
-        <button>Create a book</button>
-    </form>
     <div class="h11container">
         <h1>Your cart</h1>
     </div>

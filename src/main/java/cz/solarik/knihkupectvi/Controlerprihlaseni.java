@@ -3,36 +3,27 @@ package cz.solarik.knihkupectvi;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Controlerprihlaseni {
+    public Controlerprihlaseni(KnihaRepository kr) {
+        this.knihaRepository = kr;
+    }
+    private KnihaRepository knihaRepository;
 
     @GetMapping("/prihlaseni")
     public String prihlaseni1() {
         return "prihlaseni";
     }
-    @GetMapping("/registrace")
-    public String registrace1() {
-        return "registrace";
-    }
     @GetMapping("/domecek")
     public String domecek1() {
         return "domecek";
     }
-    @GetMapping("/book")
-    public String book1() {
-        return "book";
-    }
-    @PostMapping("/prihlaseni")
-    public String registrace2() {
-        return "prihlaseni";
-    }
     @PostMapping("/domecek")
-    public String prihlaseni2() {
+    public String prihlaseni2(@RequestParam String authorName,@RequestParam String name) {
+        var kniha = new Kniha(name,authorName);
+        knihaRepository.save(kniha);
         return "domecek";
-    }
-    @PostMapping("/book")
-    public String book2() {
-        return "book";
     }
 }
