@@ -13,6 +13,7 @@ public class KnihkupectviApplication {
 		SpringApplication.run(KnihkupectviApplication.class, args);
 	}
 
+	// Hesla chceme sifrovat
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

@@ -7,6 +7,8 @@ import cz.solarik.knihkupectvi.Uzivatel;
 
 import java.util.Optional;
 
+// Tohle repository slouzi pro praci s entitou Uzivatel
+// Napr. ulozeni objektu Uzivatel do databaze nebo vytahnouti podle ID
 @Repository
 public interface UzivatelRepository extends JpaRepository<Uzivatel, Long> {
 

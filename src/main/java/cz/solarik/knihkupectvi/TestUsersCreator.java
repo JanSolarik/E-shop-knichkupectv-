@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
+// Pomocna trida, ktera vytvori jednoho uzivatele
+// Method run(...) se spusti s kazdym nastartovanim aplikace
 @Component
 public class TestUsersCreator implements CommandLineRunner {
 

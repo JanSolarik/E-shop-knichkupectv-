@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table
 public class Uzivatel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // <--- ID nechame vygenerovat databazi
     @Column
     private Long id;
 
@@ -29,10 +29,11 @@ public class Uzivatel {
     }
 
     public Uzivatel(String username) {
-        // Tenhle konstruktor je pro programatori
+        // Tenhle konstruktor je pro programatora
         this.username = username;
     }
 
+    // Potrebujeme getter
     public Long getId() {
         return id;
     }

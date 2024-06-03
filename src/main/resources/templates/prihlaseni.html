@@ -69,6 +69,8 @@
 <body>
     <h1>Sing in</h1>
 
+    <!-- Formular odesleme na POST /prihlaseni -->
+    <!-- Implmentaci nechame na SpringSecurity, takze nepotrebujeme ani @Controller s @PostMapping("/prihlaseni") -->
     <form th:action="@{/prihlaseni}" method="post">
         <label for="username">Nickname:</label>
         <input type="text" id="username" name="username" required>

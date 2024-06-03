@@ -10,24 +10,17 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 import javax.sql.DataSource;
 
-import java.io.IOException;
-
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
 
+// Zde je nastaveni Spring-Security
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -41,8 +34,11 @@ public class SecurityConfig {
                                 .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
+                // Zde si nastavujeme vlastni login stranku
                 .formLogin(form -> form
+                    // Tohle zavalo metodu v @Controller ktera je namapovana na @GetMappging("/prihlaseni")
                     .loginPage("/prihlaseni")
+                    // V pripade uspesneho prihlaseni, se zavola tahle URL (zase @Controller s mapovanim)
                     .successForwardUrl("/domecek")
                     .permitAll()
                 )
@@ -51,6 +47,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
+        // Chceme authentizaci s JDBC (relacni databaze)
         return new JdbcUserDetailsManager(dataSource);
     }
 
@@ -61,6 +58,7 @@ public class SecurityConfig {
             PasswordEncoder passwordEncoder,
             @Value("${spring.jpa.hibernate.ddl-auto}") String ddlAuto) throws Exception {
 
+        // Zde si nastavujeme AuthenticationManager - co je Spring objekt
         final var builder = authenticationManagerBuilder
                 .jdbcAuthentication()
                 .dataSource(dataSource)
