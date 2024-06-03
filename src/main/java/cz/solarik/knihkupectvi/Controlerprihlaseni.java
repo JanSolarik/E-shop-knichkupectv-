@@ -1,9 +1,12 @@
 package cz.solarik.knihkupectvi;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class Controlerprihlaseni {
@@ -17,7 +20,9 @@ public class Controlerprihlaseni {
         return "prihlaseni";
     }
     @GetMapping("/domecek")
-    public String domecek1() {
+    public String domecek1(Model model) {
+        List<Kniha> knihy = knihaRepository.findAll();
+        model.addAttribute("allKnihy",knihy);
         return "domecek";
     }
     @PostMapping("/domecek")

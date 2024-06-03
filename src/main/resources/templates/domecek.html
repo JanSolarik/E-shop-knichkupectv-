@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:ht="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -85,7 +85,7 @@
 <body>
     <div class="user">
         <h1>Jan Solarik</h1>
-        <form ht:action="@{/domecek}" method="post">
+        <form th:action="@{/domecek}" method="post">
             <label for="name">Enter name:</label>
             <input type="text" id="name" name="name">
             <label for="author">Enter your name:</label>
