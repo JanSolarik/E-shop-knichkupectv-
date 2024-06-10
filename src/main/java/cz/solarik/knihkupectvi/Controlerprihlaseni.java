@@ -21,14 +21,15 @@ public class Controlerprihlaseni {
     }
     @GetMapping("/domecek")
     public String domecek1(Model model) {
-        List<Kniha> knihy = knihaRepository.findAll();
-        model.addAttribute("allKnihy",knihy);
+        List<Kniha> listKnih = knihaRepository.findAll();
+        model.addAttribute("allKnihy",listKnih);
+        System.out.println(listKnih);
         return "domecek";
     }
     @PostMapping("/domecek")
     public String prihlaseni2(@RequestParam String authorName,@RequestParam String name) {
         var kniha = new Kniha(name,authorName);
         knihaRepository.save(kniha);
-        return "domecek";
+        return "redirect:/domecek";
     }
 }

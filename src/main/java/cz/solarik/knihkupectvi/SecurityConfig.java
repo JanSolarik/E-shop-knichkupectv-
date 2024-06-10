@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .formLogin(form -> form
                         .loginPage("/prihlaseni")
-                        .successForwardUrl("/domecek")
+                        .defaultSuccessUrl("/domecek")
                         .permitAll()
                 )
                 .build();

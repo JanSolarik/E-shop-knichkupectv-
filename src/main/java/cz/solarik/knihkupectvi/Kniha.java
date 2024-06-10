@@ -13,6 +13,14 @@ public class Kniha {
     @Column
     private String bookName;
 
+    public String getBookName() {
+        return bookName;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
     @Column
     private String author;
 
