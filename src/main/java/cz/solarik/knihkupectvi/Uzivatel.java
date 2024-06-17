@@ -13,6 +13,9 @@ public class Uzivatel {
     @Column
     private String username;
 
+    public String username(){
+        return username;
+    }
     @Column
     private String password;
 

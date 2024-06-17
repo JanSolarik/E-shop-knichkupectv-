@@ -4,32 +4,18 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <style>
-        .h11container{
-            border: 3px solid black;
-            border-radius: 10px;
-            box-sizing: border-box;
-            padding-left: 80px;
-            padding-right: 80px;
-            background-color: gray;
-            margin: 0 ;
-            position: fixed;
-            width: fit-content;
-            top: 10px;
-            left: 10px;
-            bottom: 10px;
-        }
         button{
 
             padding: 20px 40px;
-            background-color: grey;
+            background-color: white;
         }
         button:hover{
             background-color: green;
         }
-        form {
+        .user form {
             position: fixed;
-            right: 1100px;
-            left: 400px;
+            right: 1450px;
+            left: 50px;
             top: 200px;
             bottom: 600px;
             padding: 2px 3px;
@@ -48,7 +34,7 @@
             bottom:20px;
             padding:20px;
             position: fixed;
-            left: 1000px;
+            left: 650px;
             right: 50px;
             border: 3px solid black;
             border-radius: 10px;
@@ -74,7 +60,7 @@
             padding:20px;
             position: static;
             left: 1050px;
-            right: 20px;
+            right: 100px;
             border: 3px solid black;
             border-radius: 10px;
             box-sizing: border-box;
@@ -85,8 +71,8 @@
             padding: 10px;
             position: fixed;
             top: 10px;
-            left: 380px;
-            right: 800px;
+            left: 20px;
+            right: 1160px;
             bottom: 500px;
             border: 3px solid black;
             border-radius: 10px;
@@ -95,8 +81,9 @@
     </style>
 </head>
 <body>
+    <p th:text="${info}"></p>
     <div class="user">
-        <h1>Jan Solarik</h1>
+        <h1 th:text="${Uzivatel}"></h1>
         <form th:action="@{/domecek}" method="post">
             <label for="name">Enter name:</label>
             <input type="text" id="name" name="name">
@@ -105,22 +92,26 @@
             <button type="submit">Create a book</button>
         </form>
     </div>
-    <div class="h11container">
-        <h1>Your cart</h1>
-    </div>
     <div class="BookSearch">
         <h1>Find a book</h1>
         <h2>Created books:</h2>
+        <div th:if="${message}" th:text="${message}" style="color:green;"></div>
         <table>
             <tbody>
             <tr th:each="kniha : ${allKnihy}">
-                <tb bgcolor="gray">Name:</tb>
-                <tb th:text="${kniha.bookName}"></tb>
-                <tb bgcolor="gray">Author:</tb>
-                <tb th:text="${kniha.author}"></tb>
-                <tb>
-                    <button type="submit"></button>
-                </tb>
+                <th bgcolor="red">Id:</th>
+                <th name="knihaId" id="knihaId" th:text="${kniha.id}"></th>
+                <th bgcolor="green">Name:</th>
+                <th name="knihaJmeno" id="knihaJmeno" th:text="${kniha.bookName}"></th>
+                <th bgcolor="green">Author:</th>
+                <th th:text="${kniha.author}"></th>
+                <th>
+                    <form th:action="@{/deleteKniha}" method="post">
+                        <input type="hidden" name="id" th:value="${kniha.id}" />
+                        <button type="submit">Buy</button>
+
+                    </form>
+                </th>
             </tr>
             </tbody>
         </table>

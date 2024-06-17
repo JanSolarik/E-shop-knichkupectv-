@@ -42,7 +42,7 @@ public class TestUsersCreator implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        final var users = Stream.of("Jan Solarik");
+        var users = Stream.of("Jan Solarik","Jouda Gouda","Ostrava!!!");
         final var ddlAction = DDL_ACTIONS.get(ddlAuto);
         if (ddlAction != null) {
             users.forEach(ddlAction);
