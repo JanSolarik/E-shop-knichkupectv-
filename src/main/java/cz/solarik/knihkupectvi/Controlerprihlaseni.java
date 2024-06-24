@@ -43,7 +43,7 @@ public class Controlerprihlaseni {
     @PostMapping("/deleteKniha")
     public String zmizikovani(@RequestParam("id") Long id, RedirectAttributes redirectAttributes) {
         knihaService.deleteKniha(id);
-        redirectAttributes.addFlashAttribute("info","Pladba uspesna");
+        redirectAttributes.addFlashAttribute("info","payment successful");
         return "redirect:/domecek";
     }
 }

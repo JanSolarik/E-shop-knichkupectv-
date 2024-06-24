@@ -40,6 +40,12 @@
             border-radius: 10px;
             box-sizing: border-box;
         }
+        p {
+            top:90px;
+            left:1200px;
+            color: red;
+            position: fixed;
+        }
         .BookSearch input {
             width: 100%;
             padding: 10px;
@@ -50,7 +56,6 @@
             box-sizing: border-box;
         }
         .BookSearch h1 {
-
             margin: 10px;
         }
         table {
@@ -81,7 +86,6 @@
     </style>
 </head>
 <body>
-    <p th:text="${info}"></p>
     <div class="user">
         <h1 th:text="${Uzivatel}"></h1>
         <form th:action="@{/domecek}" method="post">
@@ -95,6 +99,7 @@
     <div class="BookSearch">
         <h1>Find a book</h1>
         <h2>Created books:</h2>
+        <p th:text="${info}"></p>
         <div th:if="${message}" th:text="${message}" style="color:green;"></div>
         <table>
             <tbody>
